@@ -1,70 +1,118 @@
-# Getting Started with Create React App
+# Mini Notion Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A fully functional **Notion-like application** built with the **MERN stack** (MongoDB, Express, React, Node.js) and enhanced with **real-time collaboration**. This project is designed to be a modern, minimalist, and collaborative note-taking platform.
 
-## Available Scripts
+🌐 **Live Demo**: [https://mini-notion-clone.vercel.app/](https://mini-notion-clone.vercel.app/)
+📂 **Source Code**: [GitHub Repository](https://github.com/Aul-rhmn/mini-notion-clone)
 
-In the project directory, you can run:
+> ✅ You can register a new user, or test login with:
+>
+> * **Email**: `admin@gmail.com`
+> * **Password**: `admin123`
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## ✨ Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+* **Secure Authentication**
 
-### `npm test`
+  * User registration & login with JWT stored in **HTTP-Only Cookies**.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* **Note Management**
 
-### `npm run build`
+  * Create, view, rename, and delete notes.
+  * **Drag & Drop** to reorder notes in the sidebar.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* **Block-Based Editor**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  * Notes are composed of blocks (like Notion).
+  * **Reorder blocks** via Drag & Drop.
+  * **Supported block types**:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    * **Text** – regular paragraph text.
+    * **Checklist** – interactive to-do list.
+    * **Image** – insert via **file upload**, **drag-and-drop**, or **URL**.
+    * **Code** – for code snippets with proper formatting.
 
-### `npm run eject`
+* **Modern Functionalities**
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+  * **Autosave** – changes are saved automatically.
+  * **Real-time Collaboration** – multiple users can edit the same note and see live updates.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* **Responsive UI**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+  * Clean, modern, and mobile-friendly **dark theme** design.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 💻 Tech Stack
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Backend
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Node.js + Express.js
+* MongoDB + Mongoose
+* Socket.IO (real-time)
+* JWT for authentication
+* Multer (image uploads)
+* Helmet, CORS, Rate Limiting for security
 
-### Code Splitting
+### Frontend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* React.js + React Router
+* Tailwind CSS
+* Axios
+* React Hook Form
+* React ContentEditable
+* React Beautiful DnD
+* Socket.IO Client
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## 🚀 Getting Started
 
-### Making a Progressive Web App
+### Prerequisites
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+* [Node.js](https://nodejs.org/) (v16 or higher)
+* [MongoDB](https://www.mongodb.com/)
+* [Git](https://git-scm.com/)
 
-### Advanced Configuration
+### 1. Clone the Repository
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+```bash
+git clone https://github.com/Aul-rhmn/mini-notion-clone.git
+cd mini-notion-clone
+```
 
-### Deployment
+### 2. Backend Setup
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+```bash
+cd backend
+cp .env.example .env     # create your environment config
+npm install
+npm run dev              # or: npm start
+```
 
-### `npm run build` fails to minify
+> Required ENV:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```env
+PORT=5000
+MONGODB_URI=your_mongodb_uri
+JWT_SECRET=your_secret_key
+NODE_ENV=development
+```
+
+### 3. Frontend Setup
+
+```bash
+cd frontend
+npm install
+npm start
+```
+
+The app will run at [http://localhost:3000](http://localhost:3000) and connect to the backend at [http://localhost:5000](http://localhost:5000) (configured via Axios).
+
+---
+
+## 📝 License
+
+Feel free to fork, improve, or contribute to the project.
