@@ -17,7 +17,7 @@ const DashboardPage = () => {
   const fetchNotes = useCallback(async () => {
     try {
       setLoading(true);
-      const { data } = await api.get('/api/notes');
+      const { data } = await api.get('/notes');
       setNotes(data);
       if (data.length > 0 && !activeNoteId) {
         setActiveNoteId(data[0]._id);
@@ -36,7 +36,7 @@ const DashboardPage = () => {
     }
     setIsEditorLoading(true);
     try {
-      const { data } = await api.get(`/api/notes/${noteId}`);
+      const { data } = await api.get(`/notes/${noteId}`);
       setBlocks(data.blocks);
       setNoteTitle(data.note.title);
     } catch (error) {
