@@ -1,5 +1,9 @@
 const { Server } = require('socket.io');
 
+const allowedOrigins = [
+  'https://mini-notion-clone.vercel.app',
+  'https://mini-notion-clone-git-main-aul-rhmns-projects.vercel.app'
+];
 const initializeSocket = (server) => {
   const io = new Server(server, {
   cors: {
