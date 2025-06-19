@@ -25,9 +25,20 @@ const server = http.createServer(app);
 
 initializeSocket(server);
 
+const allowedOrigins = [
+  'https://mini-notion-clone.vercel.app',
+  'https://mini-notion-clone-git-main-aul-rhmns-projects.vercel.app'
+];
+
 app.use(cors({
-  origin: process.env.FRONTEND_URL,
-  credentials: true,
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
 }));
 app.use(helmet());
 app.use(express.json());

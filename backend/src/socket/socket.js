@@ -2,11 +2,12 @@ const { Server } = require('socket.io');
 
 const initializeSocket = (server) => {
   const io = new Server(server, {
-    cors: {
-      origin: process.env.FRONTEND_URL,
-      methods: ["GET", "POST"],
-    },
-  });
+  cors: {
+    origin: allowedOrigins,
+    methods: ['GET', 'POST'],
+    credentials: true
+  }
+});
 
   io.on('connection', (socket) => {
     console.log(`User Connected: ${socket.id}`);
